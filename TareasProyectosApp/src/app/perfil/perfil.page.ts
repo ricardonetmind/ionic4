@@ -190,7 +190,7 @@ export class PerfilPage implements OnInit {
     });
     await loading.present();
 
-    this.http.post("http://localhost:8888/upload.php", formData)
+    this.http.post("http://10.2.201.20:8080/TareasProyectosJersey/rest/file/upload", formData)
       .pipe(
         finalize(() => {
           loading.dismiss();

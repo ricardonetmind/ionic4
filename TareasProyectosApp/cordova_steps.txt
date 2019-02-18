@@ -1,0 +1,15 @@
+ionic cordova platform add android
+
+ionic cordova plugin add cordova-plugin-camera
+npm install @ionic-native/camera --save
+
+ionic cordova plugin add cordova-plugin-file
+npm install @ionic-native/file --save
+
+ionic cordova plugin add cordova-plugin-filepath
+npm install @ionic-native/file-path --save
+
+ionic cordova plugin add cordova-plugin-ionic-webview
+npm install @ionic-native/ionic-webview
+
+npm install @ionic/storage --save

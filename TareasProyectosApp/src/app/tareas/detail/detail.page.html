@@ -1,9 +1,18 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>detail</ion-title>
+    <ion-title>Detalle de tarea</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  xxx
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>[{{tarea.tid}}]</ion-card-subtitle>
+      <ion-card-title>{{tarea.desc}}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+        ({{tarea.duracion}})
+    </ion-card-content>
+  </ion-card>
 </ion-content>

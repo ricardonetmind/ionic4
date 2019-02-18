@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Tarea } from 'src/app/modelos/tarea';
+import { TareasService } from 'src/app/services/tareas.service';
 
 @Component({
   selector: 'app-detail',
@@ -7,9 +10,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailPage implements OnInit {
 
-  constructor() { }
+  tarea:Tarea;
+
+  constructor(private _route:ActivatedRoute, private _tarServ:TareasService) { }
 
   ngOnInit() {
+    this._route.params.subscribe(params=>{
+      const tid=params['tid'];
+      this.tarea=this._tarServ.getTareaByTid(tid);
+    });
+
   }
 
 }

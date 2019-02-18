@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="end">
+      <app-menuicon></app-menuicon>
+    </ion-buttons>
+    <ion-title>Lista proyectos</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-slides pager="true" [options]="{effect: 'flip'}">
+    <ion-slide *ngFor="let proj of proyectos">
+      
+      <ion-card>
+        <ion-card-header>
+            <ion-card-title>{{proj.titulo}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur nisi dolorum ipsam et exercitationem veritatis facere, adipisci nobis labore ipsa nihil omnis, optio, aliquam magnam ex ipsum laboriosam aspernatur explicabo!
+        </ion-card-content>
+      </ion-card>
+
+    </ion-slide>
+  </ion-slides>
+
+
+</ion-content>

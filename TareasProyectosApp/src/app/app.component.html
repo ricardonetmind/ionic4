@@ -1,37 +1,32 @@
 <ion-app>
-  <!--  our side menu  -->
+
   <ion-menu side="start" menuId="first">
     <ion-header>
       <ion-toolbar color="primary">
-        <ion-title>Start Menu</ion-title>
+        <ion-title>Menú de la app</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content>
+
       <ion-list>
         <ion-item>
           <ion-menu-toggle>
-            <a [routerLink]="['/tareas']" menuClose>Tareas</a>
+            <ion-button [routerLink]="['/tareas']" fill="outline">Tareas</ion-button>
           </ion-menu-toggle>
         </ion-item>
         <ion-item>
           <ion-menu-toggle>
-            <a [routerLink]="['/proyectos']" menuClose>Proyectos</a>
+            <ion-button [routerLink]="['/proyectos']" fill="clear">Proyectos</ion-button>
           </ion-menu-toggle>
         </ion-item>
         <ion-item>
           <ion-menu-toggle>
-            <a [routerLink]="['/perfil']" menuClose>Perfil</a>
-          </ion-menu-toggle>
-        </ion-item>
-        <ion-item>
-          <ion-menu-toggle>
-            <a [routerLink]="['/']" menuClose>Home</a>
+            <ion-button [routerLink]="['/perfil']" color="secondary">Perfil</ion-button>
           </ion-menu-toggle>
         </ion-item>
       </ion-list>
     </ion-content>
   </ion-menu>
 
-  <!-- the main content -->
   <ion-router-outlet main></ion-router-outlet>
 </ion-app>

@@ -6,7 +6,6 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { ListPage } from './list.page';
-import { UtilsPageModule } from 'src/app/utils/utils.module';
 
 const routes: Routes = [
   {
@@ -20,8 +19,7 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes),
-    UtilsPageModule
+    RouterModule.forChild(routes)
   ],
   declarations: [ListPage]
 })

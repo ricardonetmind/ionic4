@@ -1,21 +1,13 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>new</ion-title>
+    <ion-tab-button tab="list">
+      <ion-buttons slot="end">
+        <app-menuicon></app-menuicon>
+      </ion-buttons>
+      <ion-title>Nueva tarea</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <form novalidate [formGroup]="tareaForm" (ngSubmit)="saveTarea()">
-    <ion-title>Nueva tarea</ion-title>
-
-    <ion-item>
-      <ion-label>Descripción:</ion-label>
-      <ion-input type="text" formControlName="desc"></ion-input>
-    </ion-item>
-
-    <ion-button color="primary" [disabled]="!tareaForm.valid" type="submit">Guardar</ion-button>
-
-  </form>
-  <pre>{{tareaForm.valid}}</pre>
 
 </ion-content>

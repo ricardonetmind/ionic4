@@ -6,16 +6,20 @@ import { Routes, RouterModule } from '@angular/router';
 import { IonicModule } from '@ionic/angular';
 
 import { ProyectosPage } from './proyectos.page';
+import { ListPage } from './list/list.page';
 import { NewPage } from './new/new.page';
 import { DetailPage } from './detail/detail.page';
+import { UtilsPageModule } from '../utils/utils.module';
 
 const routes: Routes = [
   {
     path: '',
     component: ProyectosPage,
-    children: [
-      { path: 'new', component: NewPage },
-      { path: ':pid', component: DetailPage },
+    children:[
+      {path:'list',component:ListPage},
+      {path:'new',component:NewPage},
+      {path:':pid',component:DetailPage},
+      {path:'',redirectTo:'list'},
     ]
   }
 ];
@@ -25,8 +29,9 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    RouterModule.forChild(routes)
+    RouterModule.forChild(routes),
+    UtilsPageModule
   ],
-  declarations: [ProyectosPage, NewPage, DetailPage]
+  declarations: [ProyectosPage,ListPage, NewPage, DetailPage]
 })
-export class ProyectosPageModule { }
+export class ProyectosPageModule {}

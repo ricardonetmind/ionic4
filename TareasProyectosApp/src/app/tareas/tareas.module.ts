@@ -12,10 +12,10 @@ const routes: Routes = [
     path: '',
     component: TareasPage,
     children:[
-      { path: 'list', loadChildren: './list/list.module#ListPageModule' },
-      { path: 'new', loadChildren: './new/new.module#NewPageModule' },
-      { path: ':tid', loadChildren: './detail/detail.module#DetailPageModule' },
-      { path: '', redirectTo:'list'}
+      {path:'list',loadChildren:'./list/list.module#ListPageModule'},
+      {path:'new',loadChildren:'./new/new.module#NewPageModule'},
+      {path:':tid',loadChildren:'./detail/detail.module#DetailPageModule'},
+      {path:'', redirectTo:'list'}
     ]
   }
 ];

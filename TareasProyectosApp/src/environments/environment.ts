@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  API_URL: 'http://10.2.201.43:8080/TareasProyectosAPI/rest'
+  API_URL: 'http://localhost:8080/TareasProyectosAPI/rest'
 };
 
 /*

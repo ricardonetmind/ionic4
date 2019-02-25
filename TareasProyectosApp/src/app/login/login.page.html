@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>login</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content padding>
+  <form [formGroup]="frm">
+    <ion-item>
+      <ion-input formControlName="username" placeholder="Nombre de usuario"></ion-input>
+      <div class="input-errors" *ngIf="(frm.get('username').invalid && frm.get('username').touched) || showInputErrors">
+        <div *ngIf="frm.get('username').hasError('required')">
+          Nombre de usuario requerido
+        </div>
+      </div>
+    </ion-item>
+
+    <ion-item>
+      <ion-input type="password" formControlName="password" placeholder="Contraseña"></ion-input>
+      <div class="input-errors" *ngIf="(frm.get('password').invalid && frm.get('password').touched) || showInputErrors">
+        <div *ngIf="frm.get('password').hasError('required')">
+          Contraseña requerida
+        </div>
+      </div>
+    </ion-item>
+
+    <div class="sign-in-error" *ngIf="hasFailed">
+      Nombre de usuario y contraseña inválidos.
+    </div>
+
+    <ion-button (click)="doSignIn()" [disabled]="isBusy">
+      <ng-template [ngIf]="!isBusy">Sign in</ng-template>
+      <ng-template [ngIf]="isBusy">Signing in, please wait...</ng-template>
+    </ion-button>
+  </form>
+</ion-content>

@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { Proyecto } from '../modelos/proyecto';
+import { Observable } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,10 +14,14 @@ export class ProyectosService {
     new Proyecto(2,'App IOs'),
   ];
 
-  constructor() { }
+  constructor(private _http:HttpClient) { }
 
   getProyectos():Proyecto[]{
     return this._proyectos;
+  }
+
+  getProyectosFromAPI():Observable<Proyecto[]>{
+    return this._http.get<Proyecto[]>(`${environment.API_URL}/proyectos`);
   }
 
   getProyectoById(pid:number):Proyecto{

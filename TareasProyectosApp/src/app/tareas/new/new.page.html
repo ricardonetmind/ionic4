@@ -1,13 +1,38 @@
 <ion-header>
   <ion-toolbar>
-    <ion-tab-button tab="list">
-      <ion-buttons slot="end">
-        <app-menuicon></app-menuicon>
-      </ion-buttons>
-      <ion-title>Nueva tarea</ion-title>
+    <ion-buttons slot="end">
+      <app-menuicon></app-menuicon>
+    </ion-buttons>
+    <ion-title>Nueva tarea</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
+  <ion-spinner *ngIf="!proyectos"></ion-spinner>
+
+
+  <form  *ngIf="proyectos" [formGroup]="nuevaTareaForm" novalidate (ngSubmit)="guardarTarea()">
+    <ion-item>
+      <ion-label>Descripción:</ion-label>
+      <ion-input formControlName="desc"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Duración:</ion-label>
+      <ion-input type="number" formControlName="dur"></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-select formControlName="proy" value="0" ok-text="Aceptar" cancel-text="Cancelar" placeholder="Proyecto..."
+        class="proyecto-select">
+        <ion-select-option *ngFor="let proy of proyectos" [value]="proy.pid">{{proy.titulo}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-button type="submit" [disabled]="!nuevaTareaForm.valid">Guardar</ion-button>
+  </form>
+
+  <pre>{{nuevaTareaForm.valid}}</pre>
+  <pre>{{nuevaTareaForm.controls.dur.valid}}</pre>
 
 </ion-content>

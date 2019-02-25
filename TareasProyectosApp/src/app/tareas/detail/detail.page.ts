@@ -17,7 +17,7 @@ export class DetailPage implements OnInit {
   ngOnInit() {
     this._route.params.subscribe(params=>{
       const tid=params['tid'];
-      this.tarea=this._tarServ.getTareaByTid(tid);
+      if(tid) this.tarea=this._tarServ.getTareaByTid(tid);
     });
 
   }

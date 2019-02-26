@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { SessionService } from './session.service';
+import { Observable } from 'rxjs';
+import { Item } from '../modelos/items';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +13,7 @@ export class AuthService {
   ) {
   }
 
-  public isSignedIn() {
+  public isSignedIn(): Promise<any>|string {
     return this.session.getToken();
   }
 

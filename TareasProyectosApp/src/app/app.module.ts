@@ -16,6 +16,7 @@ import { Camera } from '@ionic-native/camera/ngx'
 import { File } from '@ionic-native/File/ngx';
 import { WebView } from '@ionic-native/ionic-webview/ngx';
 import { FilePath } from '@ionic-native/file-path/ngx';
+import { SQLite } from '@ionic-native/sqlite/ngx';
 
 
 import { IonicStorageModule } from '@ionic/storage';
@@ -37,7 +38,8 @@ import { IonicStorageModule } from '@ionic/storage';
     Camera,
     File,
     WebView,
-    FilePath
+    FilePath,
+    SQLite
   ],
   bootstrap: [AppComponent]
 })

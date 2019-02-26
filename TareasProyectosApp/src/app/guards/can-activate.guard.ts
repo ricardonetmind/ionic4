@@ -17,13 +17,24 @@ export class CanActivateGuard implements CanActivate {
     public canActivate(
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot
-    ): Observable<boolean> | Promise<boolean> | boolean {
+    ): Observable<boolean> | Promise<any> | boolean {
         if (!this.auth.isSignedIn()) {
             console.error('Access denied - Redirect to sign-in page');
             this.router.navigate(['/login']);
             return false;
         }
         return true;
+
+        /* return this.auth.isSignedIn().then(value=>{
+            if(!value){
+                console.error('Access denied - Redirect to sign-in page');
+                this.router.navigate(['/login']);
+                return false;
+            }else{
+                return true;
+            }
+        }); */
+
     }
 
 }

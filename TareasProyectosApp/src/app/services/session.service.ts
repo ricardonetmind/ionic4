@@ -11,24 +11,25 @@ export class SessionService {
   private _accessToken: string;
   private _name: string;
 
-  constructor(private _storageServ:StorageService) {
+  constructor(private _storageServ: StorageService) {
   }
 
-  public saveToken(token:string){
-    this._accessToken=token;
+  public saveToken(token: string) {
+    this._accessToken = token;
     //localStorage.setItem('token', this._accessToken);
-    this._storageServ.addItem({key:'token',value:this._accessToken})
+    this._storageServ.addItem({ key: 'token', value: this._accessToken })
   }
 
-  public async getToken(){
+  public getToken() {
     //this._accessToken=localStorage.getItem('token');
-    this._storageServ.getItem('token').then((item:Item)=>{
-      console.log('Token:',item);
-      this._accessToken=(item?item.value:null);
-      return this._accessToken;    
+    this._storageServ.getItem('token').then((item: Item) => {
+      console.log('Token:', item);
+      this._accessToken = (item ? item.value : null);
+      // return this._accessToken;    
     });
 
-    //return from(this._storageServ.getItem('token'));
+    // return this._storageServ.getItem('token');
+    return this._accessToken;    
 
   }
 
@@ -36,5 +37,6 @@ export class SessionService {
     this._accessToken = null;
     //localStorage.setItem('token',null);
     this._name = null;
+    this._storageServ.deleteItem('token')
   }
 }

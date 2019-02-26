@@ -43,19 +43,19 @@ export class ListPage implements OnInit {
   }
 
   ionViewDidEnter(){
-    console.log("ionViewWillleave...");
+    console.log("ionViewDidEnter...");
   }
 
   ionViewWillLeave(){
-    console.log("ionViewWillleave...");
+    console.log("ionViewWillLeave...");
   }
 
   ionViewDidLeave(){
-    console.log("ionViewWillleave...");
+    console.log("ionViewDidLeave...");
   }
 
   ionViewWillUnload(){
-    console.log("ionViewWillleave...");
+    console.log("ionViewWillUnload...");
   }
 
   async presentToastWithOptions(error: string) {

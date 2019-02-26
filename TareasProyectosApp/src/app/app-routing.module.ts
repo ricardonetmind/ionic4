@@ -4,7 +4,8 @@ import { CanActivateGuard } from './guards/can-activate.guard';
 
 const routes: Routes = [
   { path: '', redirectTo:'tareas', pathMatch:'full' },
-  { path: 'tareas', loadChildren: './tareas/tareas.module#TareasPageModule', canActivate: [CanActivateGuard] },
+  { path: 'tareas', loadChildren: './tareas/tareas.module#TareasPageModule'
+  /* , canActivate: [CanActivateGuard]  */},
   { path: 'proyectos', loadChildren: './proyectos/proyectos.module#ProyectosPageModule' },
   { path: 'perfil', loadChildren: './perfil/perfil.module#PerfilPageModule' },
   { path: 'login', loadChildren: './login/login.module#LoginPageModule' },
